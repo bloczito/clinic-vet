@@ -1,0 +1,155 @@
+.landing-page-header {
+    background-color: white;
+    /*min-height: 80vh;*/
+    height: 100vh;
+    /*min-width: 100vw;*/
+    display: flex;
+    justify-content: space-around;
+    /*position: relative;*/
+}
+
+.landing-page-about-us {
+    min-height: 50vh;
+    /*min-width: 100vw;*/
+    background-color: #E9FBFC;
+}
+
+.text-box {
+    margin: 12% 5%;
+    max-width: 40vw;
+
+}
+
+.text-box h3 {
+    font-size: 2.6rem;
+    overflow-wrap: normal;
+    letter-spacing: 2px;
+    padding: 1% 3% 3% 3%;
+}
+
+.text-box p {
+    font-size: 1.2rem;
+    overflow-wrap: normal;
+    letter-spacing: 2px;
+    padding: 3%;
+}
+
+.text-box .sub-description {
+    color: #ff725d;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.text-box .home-btn {
+    margin-left: 3%;
+    margin-top: 2%;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.landing-page img {
+    max-height: 70vh;
+    /*vertical-align: middle;*/
+    margin: 5%;
+}
+
+.landing-page-about-us {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.landing-page-about-us h3 {
+    font-size: 2.3rem;
+    overflow-wrap: normal;
+    letter-spacing: 2px;
+    padding: 3% 3% 1% 3%;
+}
+
+.landing-page-about-us h4 {
+    font-size: 1.3rem;
+    overflow-wrap: normal;
+    letter-spacing: 1px;
+    color: #585858;
+}
+
+.landing-page-about-us__vets {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing-page-about-us__vets .box {
+    width: 28%;
+    padding: 15px;
+}
+
+.box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.box .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box img {
+    width: 80%;
+    max-width: 520px;
+    margin: 0;
+    border: 20px solid #2666ab;
+}
+
+.box .name {
+    font-weight: bold;
+    margin: 5% 0;
+}
+
+.box .description {
+    text-indent: 30px;
+    text-align: justify;
+}
+
+.footer {
+    background-color: #282c34;
+    color: #d5d5d5;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+.footer .title {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer .find-us .location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.footer .find-us svg {
+    margin-right: 10px;
+}
+
+.footer a {
+    color: #61dafb;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+

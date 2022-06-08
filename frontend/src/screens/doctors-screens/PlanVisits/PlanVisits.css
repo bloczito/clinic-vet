@@ -1,0 +1,7 @@
+.react-datepicker__input-container input{
+    width: 318px;
+    height: 52px;
+}
+.react-datepicker__month-container{
+    z-index: 1000;
+}

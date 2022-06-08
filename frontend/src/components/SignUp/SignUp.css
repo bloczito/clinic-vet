@@ -1,0 +1,20 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 35px auto;
+}
+
+.register .buttons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.register button {
+    margin: 15px 20px;
+}
+
+.register input {
+    margin: 10px 0;
+}

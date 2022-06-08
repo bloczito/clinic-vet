@@ -5,7 +5,7 @@ interface props {
 }
 
 const SignIn: React.FC<props> = ({}) => {
-    return(
+    return (
         <div>
             <h1>SignIn yaaay</h1>
         </div>

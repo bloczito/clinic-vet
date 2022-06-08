@@ -1,0 +1,36 @@
+.nav__container {
+    height: 60px;
+    background-color: #fff;
+    /*margin-bottom: 10px;*/
+    padding: 0;
+    z-index: 9999;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #282c34;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;
+}
+
+.nav__container a {
+    margin-right: 20px;
+}
+
+.nav__container-logo {
+    margin-left: 10px;
+    flex: 1;
+    order: 0;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+}
+.panel-btn-log{
+    color: white !important;
+    font-weight: 800 !important;
+    dont-size: 1.8rem !important;
+}
+.panel-btn-register {
+    color: white !important;
+    border-color: white !important;
+}

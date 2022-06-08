@@ -1,0 +1,15 @@
+.user-animals {
+    margin-top: 20px
+}
+
+.user-animals .animals-list {
+    margin-bottom: 20px;
+
+}
+
+.user-animals__no-animals {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

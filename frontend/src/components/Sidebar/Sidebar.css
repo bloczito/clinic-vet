@@ -1,0 +1,23 @@
+/*.dashboard__container {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    background-color: cadetblue;*/
+/*}*/
+
+/*.dashboard__item:hover a {*/
+/*    color: #d5d0cc;*/
+/*    background-color: #2d4a4d;*/
+/*}*/
+
+
+/*.dashboard__item a {*/
+/*    display: block;*/
+/*    color: #252525;*/
+/*    padding: 10px 15px;*/
+/*    text-decoration: none;*/
+/*}*/
+
+
+.sidebar__active_button {
+    background-color: #050505;
+}
