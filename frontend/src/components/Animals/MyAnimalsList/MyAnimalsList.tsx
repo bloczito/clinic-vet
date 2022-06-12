@@ -23,9 +23,10 @@ import {
 interface props {
     userAnimals: UserPet[];
     getAnimalsList: Function;
+    refreshAnimalsHistory: Function;
 }
 
-const MyAnimalsList: React.FC<props> = ({userAnimals, getAnimalsList}) => {
+const MyAnimalsList: React.FC<props> = ({userAnimals, getAnimalsList, refreshAnimalsHistory}) => {
     const [open, setOpen] = React.useState(false);
     const [deleteAnimalId, setDeleteAnimalId] = React.useState(-1);
     const [serverError, setServerError] = useState("");
@@ -48,6 +49,7 @@ const MyAnimalsList: React.FC<props> = ({userAnimals, getAnimalsList}) => {
         animalsApi.deletePet(deleteAnimalId).then(
             () => {
                 getAnimalsList();
+                refreshAnimalsHistory();
                 setOpen(false);
                 setDeleteAnimalId(-1);
                 setServerError("")

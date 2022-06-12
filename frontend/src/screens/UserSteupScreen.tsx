@@ -51,14 +51,16 @@ import { useSnackbar } from "notistack";
 
 
      const handleChangePassword = () => {
-            userApi.changePassword(newPassword)
+            userApi.changePassword(currentPassword, newPassword)
                 .then(
                     () => {
-                        enqueueSnackbar("Zmieniono hasło!", { variant: "success" })
+                        enqueueSnackbar("Zmieniono hasło! Zaloguj się ponownie", { variant: "success", autoHideDuration: 5000} )
                         setCurrentPassword("")
                         setNewPassword("")
+                        logOut();
+                        navigate("/signIn");
                     },
-                    () => enqueueSnackbar("Wystąpił błąd",{variant: "error"})
+                    () => enqueueSnackbar("Wystąpił błąd, sprawdź czy aktualne hasło jest prawidłowe",{variant: "error", autoHideDuration: 4000})
                 )
      }
 

@@ -11,29 +11,29 @@ import {Dialog, DialogTitle, Grid, DialogContent} from "@mui/material";
 import Button from '@mui/material/Button';
 
 interface props {
-
+    animalsHistory: Visit[];
 }
 
-const MyVisitsHistory: React.FC<props> = () => {
+const MyVisitsHistory: React.FC<props> = ({animalsHistory}) => {
 
-    const [userVisitsHistory, setUserVisitsHisory] = useState<Visit[]>([]);
     const [noteOpen, setNoteOpen] = useState<boolean>(false)
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [animalNote, setAnimalNote] = useState<string>("");
 
-    useEffect(() => {
-        animalsApi.getVisitsHistory().then((res: Visit[]) => setUserVisitsHisory(res));
-    }, [])
-
-    const handleOpenNote = (index: number) => {
+    const handleOpenNote = (note: string) => {
          setNoteOpen(true);
-         setCurrentIndex(index)
+         setAnimalNote(note)
     }
+
+    const handleClose = () => {
+        setNoteOpen(false);
+        setAnimalNote("")
+    };
 
     return (
         <div className="user-animals">
-            {userVisitsHistory.length ? (
+            {animalsHistory.length ? (
                 <>
-                    {userVisitsHistory.map((visit: Visit, index: number) => (
+                    {animalsHistory.map((visit: Visit, index: number) => (
                         <Card key={index} className="animals-list">
                             <CardContent>
                                 <Grid container
@@ -51,12 +51,12 @@ const MyVisitsHistory: React.FC<props> = () => {
                                     </Grid>
                                     <Grid item xs={2}>
                                         <CardActions>
-                                            <Button onClick={() => handleOpenNote(index)} size="small">Notatka</Button>
+                                            <Button onClick={() => handleOpenNote(visit.note)} size="small">Notatka</Button>
                                         </CardActions>
-                                        <Dialog open={noteOpen} onClose={() => setNoteOpen(false)}>
+                                        <Dialog open={noteOpen} onClose={handleClose}>
                                             <DialogTitle>Notatka pozostawiona przez lekarza po spotkaniu</DialogTitle>
                                             <DialogContent>
-                                                {userVisitsHistory[currentIndex].note}
+                                                {animalNote==="" ? <span>Nie ma notatki zostawionej przez lekrza</span> : <span>{animalNote}</span>}
                                             </DialogContent>
                                         </Dialog>
                                     </Grid>

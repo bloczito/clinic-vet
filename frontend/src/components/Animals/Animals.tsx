@@ -26,6 +26,7 @@ import moment from "moment";
 import {animalsApi} from "../../api/animals.api";
 import MyAnimalsList from "./MyAnimalsList/MyAnimalsList";
 import MyVisitsHistory from "./MyHistoryList/MyVisitsHistory";
+import {Visit} from "../../types";
 
 interface props {
 
@@ -34,6 +35,7 @@ interface props {
 const Animals: React.FC<props> = () => {
     const [open, setOpen] = React.useState(false);
     const [userAnimals, setUserAnimals] = useState<UserPet[]>([]);
+    const [animalsHistory, setAnimalsHistory] = useState<Visit[]>([]);
     const [speciesList, setSpeciesList] = useState<Species[]>([]);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -115,7 +117,13 @@ const Animals: React.FC<props> = () => {
     }
 
     const getAnimalsList = () => {
-        animalsApi.getUserPets().then((res: UserPet[]) => setUserAnimals(res));
+        animalsApi.getUserPets().then((res: UserPet[]) => {
+            setUserAnimals(res);
+        });
+    }
+
+    const refreshAnimalsHistory = () => {
+        animalsApi.getVisitsHistory().then((res: Visit[]) => setAnimalsHistory(res));
     }
 
     const clearForm = () => {
@@ -130,7 +138,8 @@ const Animals: React.FC<props> = () => {
     }
 
     useEffect(() => {
-        getAnimalsList()
+        getAnimalsList();
+        refreshAnimalsHistory();
     }, [])
 
     useEffect(() => {
@@ -344,12 +353,13 @@ const Animals: React.FC<props> = () => {
                 </Dialog>
             </div>
 
-            <MyAnimalsList userAnimals={userAnimals} getAnimalsList={getAnimalsList}/>
+            <MyAnimalsList userAnimals={userAnimals} getAnimalsList={getAnimalsList} refreshAnimalsHistory={refreshAnimalsHistory}/>
 
             <Typography variant="h4" gutterBottom component="div" style={{marginTop: '70px'}}>
                   Historia wizyt
             </Typography>
-            <MyVisitsHistory />
+
+            <MyVisitsHistory animalsHistory={animalsHistory} />
 
         </div>
     )
