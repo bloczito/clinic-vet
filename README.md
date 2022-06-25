@@ -1,6 +1,8 @@
 Jak uruchomić aplikacje?
 
-- Przed uruchomieniem należy mieć zainstalowane: `Python3`, `pip`, `node LTS version`
+- Przed uruchomieniem należy mieć zainstalowane: `Python3`, `pip`, `node 16`
+
+***Uwaga nie działa na node w wersji 18***
 
 - W ./clinic-vet/backend/ uruchom `pip install -r requirements.txt` następnie `./manage.py runserver`
 
